@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC46hAVFF5ly7DGSSdSMO0G9euFfeSoUzg",
+        authDomain: "agilforyou-challenge.firebaseapp.com",
+        databaseURL: "https://agilforyou-challenge.firebaseio.com",
+        projectId: "agilforyou-challenge",
+        storageBucket: "agilforyou-challenge.appspot.com",
+        messagingSenderId: "285978990060"
+      };
+      firebase.initializeApp(config);
+    </script>
     <title>Crud</title>
 </head>
 <body>
-    <form id="form" class="form-horizontal">
+    <form id="formchallenges" class="form-horizontal">
       
           <!-- Form Name -->
          <center> <legend>Challenges</legend></center>
           
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="txtTitulo">Titulo</label>  
+            <label class="col-md-4 control-label" for="titulo">Titulo</label>  
             <div class="col-md-4">
-              <input id="txtTitulo" name="txtTitulo" type="text"  class="form-control input-md" required="">
+              <input id="tituloo" name="titulo" type="text"  class="form-control input-md" required="">
               
             </div>
           </div>
@@ -25,17 +39,17 @@
       
            <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="txtDescription">Description</label>  
+            <label class="col-md-4 control-label" for="descripcion">Description</label>  
             <div class="col-md-4">
-                <input id="txtDescription" name="txtDescription" type="text"  class="form-control input-md" required="">
+                <input id="descripcionn" name="descripcion" type="text"  class="form-control input-md"required="" >
                 
             </div>
           </div>
           <!-- Text input-->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="txtItems">Items</label>  
+            <label class="col-md-4 control-label" for="items">Items</label>  
             <div class="col-md-4">
-                <input id="txtItems" name="txtItems" type="text"  class="form-control input-md" required="">
+                <input id="itemss" name="items" type="text"  class="form-control input-md" required="" >
                 
             </div>
           </div>
@@ -45,8 +59,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="btnSave"></label>
             <div class="col-md-8">
-             <button id="btnSave" name="btnSave" class="btn btn-success">Save</button>
-              <button id="btnClean" name="btnClean" type="reset" class="btn btn-default">Clean</button>
+             <input type="submit" id="btnSave" name="" value="SAVE" class="btn btn-success">
             </div>
           </div>
       </form>
@@ -68,16 +81,14 @@
                <div id="resultado"></div>
                   <thead>
                     <tr>
-                     <th>ID</th>
                      <th>Titulo</th>
                      <th>Description</th>
                      <th>Items</th>
-                     <th>Direccion</th>
                      <th>Options</th>
                     </tr>
       
                   </thead>
-                <tbody>
+                <tbody id="tbody-form">
                 </tbody>
                 </table>
             
@@ -91,5 +102,5 @@
       </div>
 
 </body>
-<script src="js/main.js"></script>
+
 </html>
