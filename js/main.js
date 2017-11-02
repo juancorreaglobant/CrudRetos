@@ -1,4 +1,3 @@
-
 window.onload= inicializar;
 var formchallenges;
 var referenciafirebase;
