@@ -1,3 +1,4 @@
+
 window.onload= inicializar;
 var formchallenges;
 var referenciafirebase;
@@ -13,7 +14,6 @@ function inicializar(){
 
     formchallenges.addEventListener("submit", enviarchallenges, false);
     referenciafirebase = firebase.database().ref().child("Retos_info");
- 
      mostrarChallenges();
 }
 
@@ -65,6 +65,7 @@ function EditChallenges(){
      document.getElementById("descripcionn").value = data.descripcion;
      document.getElementById("itemss").value = data.items;
     });
+
     document.getElementById("btnSave").value = UPDATE;
     modo = UPDATE;
 }

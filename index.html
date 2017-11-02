@@ -19,88 +19,87 @@
       };
       firebase.initializeApp(config);
     </script>
-    <title>Crud</title>
+    <title>CRUD</title>
 </head>
 <body>
-    <form id="formchallenges" class="form-horizontal">
-      
+    <nav class="navbar navbar-default">
+        <ul class="nav navbar-nav">
+            <img class="img" width="100%;" src="https://www.globant.com/sites/all/themes/globant/images/svg/globant-dark.svg">
+        </ul>
+    </nav>
+  <section>
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading" align="center"><h4>Challenge</h4></div>
+        <div class="panel-body">
           <!-- Form Name -->
-         <center> <legend>Challenges</legend></center>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="titulo">Titulo</label>  
-            <div class="col-md-4">
-              <input id="tituloo" name="titulo" type="text"  class="form-control input-md" required="">
-              
+          <form id="formchallenges" class="form-horizontal">        
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="titulo">Title</label>  
+              <div class="col-md-4">
+                <input id="tituloo" name="titulo" type="text"  class="form-control input-md" required="">                   
+              </div>
+            </div>      
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="descripcion">Description</label>  
+              <div class="col-md-4">
+                <input id="descripcionn" name="descripcion" type="text"  class="form-control input-md"required="" >             
+              </div>
             </div>
-          </div>
-      
-      
-           <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="descripcion">Description</label>  
-            <div class="col-md-4">
-                <input id="descripcionn" name="descripcion" type="text"  class="form-control input-md"required="" >
-                
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="items">Items</label>  
+              <div class="col-md-4">
+                <input id="itemss" name="items" type="text"  class="form-control input-md" required="" >              
+              </div>
+            </div>            
+            <!-- Button (Double) -->
+            <div class="form-group" >
+              <label class="col-md-4 control-label" for="btnSave"></label>
+              <div class="col-md-8">
+                <input type="submit" id="btnSave" name="" value="SAVE" class="btn btn-success">
+              </div>
             </div>
-          </div>
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="items">Items</label>  
-            <div class="col-md-4">
-                <input id="itemss" name="items" type="text"  class="form-control input-md" required="" >
-                
-            </div>
-          </div>
-      
-         
-          <!-- Button (Double) -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="btnSave"></label>
-            <div class="col-md-8">
-             <input type="submit" id="btnSave" name="" value="SAVE" class="btn btn-success">
-            </div>
-          </div>
-      </form>
-      
-      <hr>
-         
-            <div class="row">
-            <div class="col-md-12">
-            <div class="box">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">      
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
             <div class="box-header">
-            <h3 class="box-title">List Challenges</h3>
-      
-            <!-- /.box-header -->
-      
+              <div align="center">
+                <h3 class="box-title">List Challenges</h3>   
+              </div>  
+            <!-- /.box-header -->     
             <div class="box-body">
               <div class="table-responsive">
               <table class="table table-hover" id="tablaChanges">
-               <div class="form-group">
-               <div id="resultado"></div>
+                <div class="form-group">
+                <div id="resultado"></div>
                   <thead>
                     <tr>
-                     <th>Titulo</th>
-                     <th>Description</th>
-                     <th>Items</th>
-                     <th>Options</th>
-                    </tr>
-      
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Items</th>
+                      <th>Options</th>
+                    </tr>     
                   </thead>
                 <tbody id="tbody-form">
                 </tbody>
-                </table>
-            
+                </table>           
               </div>
             </div>
             <!-- /.box-body -->
           </div>
-      
-      
         </div>
       </div>
-
+    </div>
+  </section>
 </body>
-
 </html>
