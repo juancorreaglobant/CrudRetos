@@ -1,3 +1,4 @@
+
 window.onload= inicializar;
 var formchallenges;
 var referenciafirebase;
@@ -13,7 +14,6 @@ function inicializar(){
 
     formchallenges.addEventListener("submit", enviarchallenges, false);
     referenciafirebase = firebase.database().ref().child("Retos_info");
- 
      mostrarChallenges();
 }
 
