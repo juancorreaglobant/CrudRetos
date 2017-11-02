@@ -75,16 +75,28 @@ function  DeleteChallenges(){
     var keyElemntDelete = this.getAttribute("data-challenge");
     var refElementDelete = referenciafirebase.child(keyElemntDelete);
     refElementDelete.remove();
+    swal(
+        'successfully deleted!',
+        'Continue',
+        'success'
+      );
 }
  function enviarchallenges(event){
      event.preventDefault();
      switch(modo){
          case CREATE:
-         referenciafirebase.push({
+         var sn=6;
+         referenciafirebase.child('reto'+sn).set({
                titulo: event.target.titulo.value,
                descripcion: event.target.descripcion.value,
                items: event.target.items.value
+              
                 });
+                swal(
+                    'successfully saved!',
+                    'Continue',
+                    'success'
+                  );
                 break;
 
          case UPDATE:
@@ -95,6 +107,11 @@ function  DeleteChallenges(){
          });
          modo = CREATE;
          document.getElementById("btnSave").value = CREATE;
+         swal(
+            'successfully updated',
+            'Continue',
+            'success'
+          );
          break;
      }
     
