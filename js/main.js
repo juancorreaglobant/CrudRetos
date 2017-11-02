@@ -31,12 +31,10 @@ function mostrarChallenges(){
     '<button class="btn btn-default editar" data-challenge="' + key +'">'+
     '<span class="glyphicon glyphicon-pencil"></span>'+
     '</button>'+
-    "<td>" + 
-    '<td>'+
-        '<button class="btn btn-danger borrar" data-challenge="' + key +'">'+
-        '<span class="glyphicon glyphicon-trash"></span>'+
-        '</button>'+
-    '</td>' + 
+    '<button class="btn btn-danger borrar" data-challenge="' + key +'">'+
+    '<span class="glyphicon glyphicon-trash"></span>'+
+    '</button>'+
+    "</td>" + 
 
     "<tr>"
 
