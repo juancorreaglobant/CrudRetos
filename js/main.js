@@ -58,7 +58,7 @@ function mostrarChallenges(){
 }
 function EditChallenges(){
     var keyElementEdit = this.getAttribute("data-challenge");
-     refElementEdit = referenciafirebase.child(keyElementEdit);
+    refElementEdit = referenciafirebase.child(keyElementEdit);
     refElementEdit.once("value", function(snap){
      var data = snap.val();
      document.getElementById("tituloo").value = data.titulo;
@@ -96,6 +96,7 @@ function  DeleteChallenges(){
          document.getElementById("btnSave").value = CREATE;
          break;
      }
+    
      formchallenges.reset();
  }
 
