@@ -1,3 +1,4 @@
+
 window.onload= inicializar;
 var formchallenges;
 var referenciafirebase;
@@ -13,7 +14,6 @@ function inicializar(){
 
     formchallenges.addEventListener("submit", enviarchallenges, false);
     referenciafirebase = firebase.database().ref().child("Retos_info");
- 
      mostrarChallenges();
 }
 
@@ -29,12 +29,14 @@ function mostrarChallenges(){
     "<td>"+ datos[key].items + "</td>" + 
     "<td>"+
     '<button class="btn btn-default editar" data-challenge="' + key +'">'+
-    '<span class="glyphicon glyphicon-pencil"></span>'+
+    '<span class=" glyphicon glyphicon-pencil"></span>'+
     '</button>'+
-    '<button class="btn btn-danger borrar" data-challenge="' + key +'">'+
-    '<span class="glyphicon glyphicon-trash"></span>'+
-    '</button>'+
-    "</td>" + 
+    "<td>" + 
+    '<td>'+
+        '<button class="btn btn-danger borrar" data-challenge="' + key +'">'+
+        '<span class="glyphicon glyphicon-trash"></span>'+
+        '</button>'+
+    '</td>' + 
 
     "<tr>"
 
@@ -63,6 +65,7 @@ function EditChallenges(){
      document.getElementById("descripcionn").value = data.descripcion;
      document.getElementById("itemss").value = data.items;
     });
+
     document.getElementById("btnSave").value = UPDATE;
     modo = UPDATE;
 }
@@ -72,16 +75,28 @@ function  DeleteChallenges(){
     var keyElemntDelete = this.getAttribute("data-challenge");
     var refElementDelete = referenciafirebase.child(keyElemntDelete);
     refElementDelete.remove();
+    swal(
+        'successfully deleted!',
+        'Continue',
+        'success'
+      );
 }
  function enviarchallenges(event){
      event.preventDefault();
      switch(modo){
          case CREATE:
-         referenciafirebase.push({
+         var sn=6;
+         referenciafirebase.child('reto'+sn).set({
                titulo: event.target.titulo.value,
                descripcion: event.target.descripcion.value,
                items: event.target.items.value
+              
                 });
+                swal(
+                    'successfully saved!',
+                    'Continue',
+                    'success'
+                  );
                 break;
 
          case UPDATE:
@@ -92,10 +107,14 @@ function  DeleteChallenges(){
          });
          modo = CREATE;
          document.getElementById("btnSave").value = CREATE;
+         swal(
+            'successfully updated',
+            'Continue',
+            'success'
+          );
          break;
      }
+    
      formchallenges.reset();
  }
-
-
 
