@@ -29,12 +29,12 @@ function mostrarChallenges(){
     "<td>"+ datos[key].items + "</td>" + 
     "<td>"+
     '<button class="btn btn-default editar" data-challenge="' + key +'">'+
-    '<span class="glyphicon-pencil"></span>'+
+    '<span class="glyphicon glyphicon-pencil"></span>'+
     '</button>'+
     "<td>" + 
     '<td>'+
         '<button class="btn btn-danger borrar" data-challenge="' + key +'">'+
-        '<span class="glyphicon-trash"></span>'+
+        '<span class="glyphicon glyphicon-trash"></span>'+
         '</button>'+
     '</td>' + 
 
@@ -58,7 +58,7 @@ function mostrarChallenges(){
 }
 function EditChallenges(){
     var keyElementEdit = this.getAttribute("data-challenge");
-    var refElementEdit = referenciafirebase.child(keyElementEdit);
+    refElementEdit = referenciafirebase.child(keyElementEdit);
     refElementEdit.once("value", function(snap){
      var data = snap.val();
      document.getElementById("tituloo").value = data.titulo;
