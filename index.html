@@ -1,30 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="js/main.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
-  
-   
-   <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyC46hAVFF5ly7DGSSdSMO0G9euFfeSoUzg",
-        authDomain: "agilforyou-challenge.firebaseapp.com",
-        databaseURL: "https://agilforyou-challenge.firebaseio.com",
-        projectId: "agilforyou-challenge",
-        storageBucket: "agilforyou-challenge.appspot.com",
-        messagingSenderId: "285978990060"
-      };
-      firebase.initializeApp(config);
-    </script>
-    <title>CRUD</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Document</title>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -32,79 +13,10 @@
             <img class="img" width="100%;" src="https://www.globant.com/sites/all/themes/globant/images/svg/globant-dark.svg">
         </ul>
     </nav>
-  <section>
-    <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-heading" align="center"><h3>Challenge</h3></div>
-        <div class="panel-body">
-          <!-- Form Name -->
-          <form id="formchallenges" class="form-horizontal">        
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="titulo">Title</label>  
-              <div class="col-md-4">
-                <input id="tituloo" name="titulo" type="text"  class="form-control input-md" required="">                   
-              </div>
-            </div>      
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="descripcion">Description</label>  
-              <div class="col-md-4">
-                <input id="descripcionn" name="descripcion" type="text"  class="form-control input-md"required="" >             
-              </div>
-            </div>
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="items">Items</label>  
-              <div class="col-md-4">
-                <input id="itemss" name="items" type="text"  class="form-control input-md" required="" >              
-              </div>
-            </div>            
-            <!-- Button (Double) -->
-            <div class="form-group" >
-              <label class="col-md-4 control-label" for="btnSave"></label>
-              <div class="col-md-8">
-                <input type="submit" id="btnSave" name="" value="SAVE" class="btn btn-success">
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="container">      
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header">
-              <div align="center">
-                <h3 class="box-title">Challenges List</h3>   
-              </div>  
-            <!-- /.box-header -->     
-            <div class="box-body">
-              <div class="table-responsive">
-              <table class="table table-hover" id="tablaChanges">
-                <div class="form-group">
-                <div id="resultado"></div>
-                  <thead>
-                    <tr>
-                      <th>Title</th>
-                      <th>Description</th>
-                      <th>Items</th>
-                      <th>Options</th>
-                    </tr>     
-                  </thead>
-                <tbody id="tbody-form">
-                </tbody>
-                </table>           
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
+    <div align="center">
+      <h1>Welcome to the code challenge management page.</h1>
+    <input type="submit" id="btnSave" name="" value="View challenges list" class="btn btn-success" onClick="window.location.href='./view/AdminChallenge.html'">
+    <input type="submit" id="btnSave" name="" value="View info challenges with CV" class="btn btn-success" onClick="window.location.href='./view/infoRetos.html'">
+  </div>
+  </body>
 </html>
