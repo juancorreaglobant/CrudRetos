@@ -7,6 +7,8 @@ var CREATE = "SAVE";
 var UPDATE = "UPDATE";
 var modo = CREATE;
 var refElementEdit;
+var datos;
+
 
 function inicializar(){
     formchallenges = document.getElementById("formchallenges");
@@ -20,7 +22,7 @@ function inicializar(){
 function mostrarChallenges(){
 
     referenciafirebase.on("value", function(snap){
-     var datos = snap.val();
+    datos = snap.val();
      var filasMostrar="";
     for(var key in datos){
     filasMostrar += "<tr>" +
@@ -85,7 +87,8 @@ function  DeleteChallenges(){
      event.preventDefault();
      switch(modo){
          case CREATE:
-         var sn=6;
+         var sn=Object.keys(datos).length+1;
+         
          referenciafirebase.child('reto'+sn).set({
                titulo: event.target.titulo.value,
                descripcion: event.target.descripcion.value,

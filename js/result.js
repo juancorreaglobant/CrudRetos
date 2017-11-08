@@ -13,23 +13,28 @@ function inicializar(){
      mostrarResult();
 }
 function mostrarResult() {
+    
     refirebase.on("value", function(snap){
         var datas = snap.val();
+        
         var filassMostrar="";
+        var most="reto";
        for(var key in datas){
+        var retos
+        for(var i=0; Object.keys(datas[key].Retos).length>=i; i++){
+            retos += "-"+datas[key].Retos[most+i]+"- ";
+        }
        filassMostrar += "<tr>" +
-       "<td>"+ datas[key].Retos + "</td>" +
-       "<td>"+ datas[key].CVURL + "</td>" +
+       "<td>"+ retos + "</td>" +
        "<td>"+
-       '<button class="btn btn-default download" data-challenge="' + key +'">'+
+       '<a href="'+datas[key].CVURL+'" target="_blank">'+
        '<span class="glyphicon glyphicon-eye-open"></span>'+
-       '</button>'+
+       '</a>'+
        "</td>" + 
        "<tr>"
-    
+       retos="";
 }
 tbodyformRS.innerHTML = filassMostrar;
-console.log(datas);
     });
     ResultChallenges.reset();
 }
