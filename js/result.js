@@ -22,7 +22,8 @@ function mostrarResult() {
        for(var key in datas){
         var retos
         for(var i=0; Object.keys(datas[key].Retos).length>=i; i++){
-            retos += "-"+datas[key].Retos[most+i]+"- ";
+            retos += "<table>"+"<tr>"+ " reto "+i+":"+datas[key].Retos[most+i]+"</tr>"+"</table>";
+    
         }
        filassMostrar += "<tr>" +
        "<td>"+ retos + "</td>" +
@@ -31,7 +32,7 @@ function mostrarResult() {
        '<span class="glyphicon glyphicon-eye-open"></span>'+
        '</a>'+
        "</td>" + 
-       "<tr>"
+       "</tr>"
        retos="";
 }
 tbodyformRS.innerHTML = filassMostrar;
