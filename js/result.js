@@ -22,8 +22,14 @@ function mostrarResult() {
        for(var key in datas){
         var retos
         for(var i=1; Object.keys(datas[key].Retos).length>=i; i++){
-            retos += "<table>"+"<tr>"+ " reto "+i+":"+datas[key].Retos[most+i]+"</tr>"+"</table>";
-    
+            //items: event.target.items.value
+            retos += "<td>"+
+            "<center>"+
+            "<b>"+ " Reto "+i+":"+"</b>"+"<br>"+
+            "<i>"+datas[key].Retos[most+i]+"</i>"+
+            "</center>"+
+            "</td>"
+            ;
         }
        filassMostrar += "<tr>" +
        "<td>"+ retos + "</td>" +
