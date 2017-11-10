@@ -21,7 +21,7 @@ function mostrarResult() {
         var most="reto";
        for(var key in datas){
         var retos
-        for(var i=0; Object.keys(datas[key].Retos).length>=i; i++){
+        for(var i=1; Object.keys(datas[key].Retos).length>=i; i++){
             retos += "<table>"+"<tr>"+ " reto "+i+":"+datas[key].Retos[most+i]+"</tr>"+"</table>";
     
         }
